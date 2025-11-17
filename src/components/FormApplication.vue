@@ -86,7 +86,6 @@
         </div>
       </div>
 
-      <!-- Debug box: show Vue state -->
       <div class="mt-6">
         <h2 class="text-sm font-semibold text-slate-700 mb-2">Current form data (Vue state)</h2>
         <pre class="text-xs bg-slate-900 text-slate-100 rounded-lg p-3 overflow-x-auto"
@@ -120,7 +119,7 @@ const handleSubmit = async () => {
   messageType.value = 'success'
 
   try {
-    // Call backend (we'll create it next)
+    // Call backend
     const res = await fetch('http://localhost:3000/api/form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

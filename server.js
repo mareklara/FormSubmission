@@ -14,13 +14,13 @@ const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(express.json())
 
-// 1) Setup Supabase client (backend uses service_role key)
+// Setup Supabase client (backend uses service_role key)
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-// 2) GET route to see all submissions (from Supabase)
+// GET route to see all submissions (from Supabase)
 app.get('/api/forms', async (req, res) => {
   try {
     const { data, error } = await supabase
@@ -37,7 +37,7 @@ app.get('/api/forms', async (req, res) => {
   }
 })
 
-// 3) POST route to save a form into Supabase
+// POST route to save a form into Supabase
 app.post('/api/form', async (req, res) => {
   try {
     const data = req.body
